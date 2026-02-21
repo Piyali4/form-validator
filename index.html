@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="form-card" aria-label="Signup form">
+      <h1>Signup</h1>
+
+      <form id="signup-form" novalidate>
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input
+            id="full-name"
+            name="fullName"
+            type="text"
+            placeholder="Type Name Here"
+            autocomplete="name"
+          >
+          <small class="error-message" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="xyz@gmail.com"
+            autocomplete="email"
+          >
+          <small class="error-message" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-with-toggle">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="at least 8 characters"
+              autocomplete="new-password"
+            >
+            <button
+              class="toggle-password"
+              type="button"
+              data-target="password"
+              aria-label="Show password"
+              aria-pressed="false"
+              data-visible="false"
+            >
+              <span class="eye-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="password-meter" aria-live="polite">
+            <div class="password-meter-track">
+              <span id="password-meter-fill" class="password-meter-fill"></span>
+            </div>
+            <small id="password-strength-text" class="password-strength-text">Strength: -</small>
+          </div>
+          <small class="error-message" aria-live="polite"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="input-with-toggle">
+            <input
+              id="confirm-password"
+              name="confirmPassword"
+              type="password"
+              placeholder="re-enter password"
+              autocomplete="new-password"
+            >
+            <button
+              class="toggle-password"
+              type="button"
+              data-target="confirm-password"
+              aria-label="Show password"
+              aria-pressed="false"
+              data-visible="false"
+            >
+              <span class="eye-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <small class="error-message" aria-live="polite"></small>
+        </div>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+        <p class="form-footer">Already have an account? <a href="#">Login</a></p>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
